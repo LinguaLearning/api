@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const lessonRouter = require("./routers/LessonsRouter");
 const app = express();
 const cors = require("cors");
-const port = 2022;
+const port = process.env.PORT || 2022;
 
 require("dotenv").config();
 
