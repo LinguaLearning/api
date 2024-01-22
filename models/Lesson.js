@@ -3,27 +3,30 @@ const Schema = mongoose.Schema;
 
 const lessonSchema = new Schema(
   {
-    title: {
+    name: {
       type: String,
     },
     description: {
       type: String,
     },
-    difficulty: {
+    saved: {
+      type: Boolean,
+    },
+    content: {
       type: String,
     },
-    lesson_number: {
+    author: {
+      type: String,
+    },
+    lessonImg: {
+      type: String,
+    },
+    lessonOrder: {
       type: Number,
-    },
-    lesson_container: {
-      type: Array,
-    },
-    image: {
-      type: String,
-    },
+    }
   },
   { timestamps: true }
 );
 
-const Lesson = mongoose.model("French", lessonSchema);
+const Lesson = mongoose.model("Lesson", lessonSchema);
 module.exports = Lesson;

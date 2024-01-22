@@ -8,7 +8,8 @@ const port = process.env.PORT || 2022;
 require("dotenv").config();
 
 app.use(cors());
-app.use("/lessons", lessonRouter);
+app.use(express.json());
+app.use("/", lessonRouter);
 
 mongoose
   .connect(process.env.DATABASE_URL, {

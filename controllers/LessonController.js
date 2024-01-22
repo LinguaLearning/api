@@ -12,6 +12,22 @@ const getLessons = (req, res) => {
     });
 };
 
+const createLesson = (req, res) => {
+  const body = req.body;
+
+  const lesson = new Lesson({
+    name: body.name,
+    description: body.name,
+    saved: false,
+    content: "",
+    author: body.author,
+    lessonImg: body.lessonImg
+  });
+
+  lesson.save();
+}
+
 module.exports = {
   getLessons,
+  createLesson
 };
